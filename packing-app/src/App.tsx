@@ -52,7 +52,7 @@ function App() {
         <Route path={'login'} element={<Login></Login>}></Route>
         <Route path={'plan'} element={<Plan></Plan>}></Route>
         <Route path={'SelectCategory'} element={<SelectCategory></SelectCategory>}></Route>
-        <Route path={'AddList'} element={<AddList></AddList>}></Route>
+        <Route path={'AddList'} element={<AddList/>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
 

@@ -11,10 +11,14 @@ const Login = () => {
     const _navigat = useNavigate();
     useEffect(() => { }, [])
     const login = (user: User) => {
+      alert("login func!");
         if (!userService.getUserByPassword(user.password)) {
+          alert("ther is no user with this password!");
             _navigat("/register");
         }
         else
+        alert("ther is user with this password!-goodluck");
+
             _navigat("/plan");
     }
     const myFormik = useFormik({
@@ -101,7 +105,7 @@ const Login = () => {
                 className="img-fluid" alt="Sample image"></img>
             </div>
             <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-              <Form onSubmit={myFormik.handleChange}>
+              <Form onSubmit={myFormik.handleSubmit}>
                 <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                   <p className="lead fw-normal mb-0 me-3">Sign in with</p>
                   <Button type="button" className="btn btn-primary btn-floating mx-1">
@@ -134,9 +138,7 @@ const Login = () => {
                     placeholder="Enter password" ></Form.Control>
                   <Form.Label className="form-label" htmlFor="password">Password</Form.Label>
                 </div>
-                {myFormik.errors.password ?  <div id="validationServer03Feedback" className="invalid-feedback">
-     { myFormik.errors.password}
-    </div> : ''}
+                {myFormik.errors.password ?  '':<div id="validationServer03Feedback" className="invalid-feedback">{ myFormik.errors.password}ok</div> }
 
       
                 <div className="d-flex justify-content-between align-items-center">
